@@ -4,7 +4,7 @@ This is a simple plugin to get `koan` syntax highlighting and treesitter in `nvi
 ```lua
 return {
     "https://github.com/TogarashiPepper/koan.nvim",
-	dependencies = { "nvim-treesitter/nvim-treesitter" },
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
     ft = "koan",
     config = function()
         require('koan').setup()
