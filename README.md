@@ -1,5 +1,5 @@
 # Koan.nvim
-This is a simple plugin to get koan syntax highlighting and treesitter in nvim. To get started add this to your lazy.nvim plugin spec:
+This is a simple plugin to get `koan` syntax highlighting and treesitter in `nvim`. To get started add this to your `lazy.nvim` plugin spec:
 
 ```lua
 return {
@@ -12,7 +12,7 @@ return {
 }
 ```
 
-You'll also have to add this somewhere in your init.lua so vim and treesitter recognizes the koan filetypes
+You'll also have to add this somewhere in your `init.lua` so vim and treesitter recognizes the koan filetypes
 
 
 ```lua
