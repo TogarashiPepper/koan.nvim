@@ -1,3 +1,9 @@
+function file_exists(name)
+   local f = io.open(name, "r")
+   return f ~= nil and io.close(f)
+end
+
+
 local function setup()
     local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
     parser_config.koan = {
@@ -11,18 +17,17 @@ local function setup()
         filetype = "koan",
     }
 
-    -- vim.opt.runtimepath:prepend('e,')
     local url = "https://raw.githubusercontent.com/TogarashiPepper/tree-sitter-koan/main/queries/highlights.scm"
     local output_file = "highlights.scm"
 
-    local command = string.format('curl -s "%s" -o "%s"', url, output_file)
-    local success, exit_code = os.execute(command)
-    local pwd = os.getenv("PWD")
+    local config = os.getenv("HOME") .. "/.config/nvim"
 
-    if success then
-        os.execute("mkdir -p tslookup/queries/koan")
-        os.execute("cp highlights.scm tslookup/queries/koan/highlights.scm")
-        vim.opt.runtimepath:prepend(pwd .. "/tslookup")
+    if not file_exists(config .. "/queries/koan") then
+        local command = string.format('curl -s "%s" -o "%s"', url, output_file)
+        local success, exit_code = os.execute(command)
+
+        os.execute("mkdir -p " .. config .. "/queries/koan")
+        os.execute("mv highlights.scm " .. config .. "/queries/koan/highlights.scm")
     end
 end
 
