@@ -29,13 +29,6 @@ local function setup()
         os.execute("mkdir -p " .. config .. "/queries/koan")
         os.execute("mv highlights.scm " .. config .. "/queries/koan/highlights.scm")
     end
-
-    vim.filetype.add({
-        extension = {
-            koan = 'koan',
-            kn = 'koan'
-        }
-    })
 end
 
 return { setup = setup }
