@@ -11,8 +11,6 @@ local function setup()
             url = "https://github.com/TogarashiPepper/tree-sitter-koan.git",
             files = {"src/parser.c", "queries/highlights.scm"},
             branch = "main",
-            generate_requires_npm = true,
-            requires_generate_from_grammar = true,
         },
         filetype = "koan",
     }
