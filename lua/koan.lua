@@ -9,7 +9,7 @@ local function setup()
     parser_config.koan = {
         install_info = {
             url = "https://github.com/TogarashiPepper/tree-sitter-koan.git",
-            files = {"src/parser.c", "queries/highlights.scm"},
+            files = {"src/parser.c"},
             branch = "main",
         },
         filetype = "koan",
